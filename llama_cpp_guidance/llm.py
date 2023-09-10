@@ -88,6 +88,7 @@ class LlamaCpp(LLM):
     def __call__(self, *args, **kwargs):
         logger.debug("Invoking LlamaCpp ({args}) ({kwargs})", args=args, kwargs=kwargs)
         for output in self.llm(*args, **kwargs):
+            print(output)
             logger.debug(
                 "LlamaCpp generated text: {text} ({choices})",
                 text=output["choices"][0]["text"],
